@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcyifnbp1nhwu"]
+
+[ext_resource type="Script" uid="uid://ctxp50muh6rnq" path="res://scripts/main_scene.gd" id="1_pw63i"]
+[ext_resource type="PackedScene" uid="uid://bdjm4wjl1n8ru" path="res://scenes/player.tscn" id="1_w2twt"]
+[ext_resource type="Script" uid="uid://drf8nammtfyo7" path="res://scripts/enemy_container.gd" id="4_gubc5"]
+[ext_resource type="PackedScene" uid="uid://t5fyrf14ksh6" path="res://scenes/hud.tscn" id="4_pu3yx"]
+
+[node name="MainScene" type="Node2D" node_paths=PackedStringArray("enemy_spawn_timer", "enemy_spawn_container")]
+script = ExtResource("1_pw63i")
+enemy_spawn_timer = NodePath("EnnemyTimer")
+enemy_spawn_container = NodePath("EnemyContainer")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Player" parent="." node_paths=PackedStringArray("HUD") instance=ExtResource("1_w2twt")]
+position = Vector2(373, 900)
+HUD = NodePath("../HUD")
+
+[node name="EnnemyTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("4_pu3yx")]
+
+[node name="EnemyContainer" type="Node2D" parent="." node_paths=PackedStringArray("HUD")]
+position = Vector2(374, -24)
+script = ExtResource("4_gubc5")
+HUD = NodePath("../HUD")
