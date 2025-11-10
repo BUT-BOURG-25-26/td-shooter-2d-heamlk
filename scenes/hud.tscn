@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://t5fyrf14ksh6"]
+
+[ext_resource type="Texture2D" uid="uid://dkw1qi8pwrgg3" path="res://KennyAssets/SpaceShooterRedux/UI/playerLife1_blue.png" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://c25lngussnoqr" path="res://scripts/hud.gd" id="1_oo0fn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo0fn"]
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("score_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oo0fn")
+score_container = NodePath("HBoxContainer2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 172.0
+offset_bottom = 64.0
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oo0fn")
+
+[node name="PlayerLife1Blue" type="Sprite2D" parent="HBoxContainer/Panel"]
+position = Vector2(20, 19)
+texture = ExtResource("1_ahhtf")
+
+[node name="Panel2" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oo0fn")
+
+[node name="PlayerLife1Blue" type="Sprite2D" parent="HBoxContainer/Panel2"]
+position = Vector2(20, 19)
+texture = ExtResource("1_ahhtf")
+
+[node name="Panel3" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oo0fn")
+
+[node name="PlayerLife1Blue" type="Sprite2D" parent="HBoxContainer/Panel3"]
+position = Vector2(20, 19)
+texture = ExtResource("1_ahhtf")
+
+[node name="Panel4" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oo0fn")
+
+[node name="PlayerLife1Blue" type="Sprite2D" parent="HBoxContainer/Panel4"]
+position = Vector2(20, 19)
+texture = ExtResource("1_ahhtf")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 32.0
+offset_right = 796.0
+offset_bottom = 52.0
+alignment = 2
