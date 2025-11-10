@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdjm4wjl1n8ru"]
+
+[ext_resource type="Texture2D" uid="uid://cofylary07q2b" path="res://KennyAssets/SpaceShooterRedux/playerShip1_blue.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://2dpb6554qtpc" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(59, 51)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("shoot_timer")]
+collision_mask = 6
+script = ExtResource("1_g2els")
+shoot_timer = NodePath("ShootTimer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3vyb7")
+
+[node name="ShootTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
